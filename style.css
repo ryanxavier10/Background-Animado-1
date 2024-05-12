@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: #000000;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bolhas{
+    position: absolute;
+    display: flex;
+}
+
+.bolhas span {
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ff000044,
+    0 0 50px #ff0000,
+    0 0 100px #ff0000;
+    animation: animar calc(150s / var(--i)) linear infinite;
+}
+
+.bolhas span:nth-last-of-type(even){
+    background: #6c2dff;
+    box-shadow: 0 0 0 10px #6c2dff44,
+    0 0 50px #6c2dff,
+    0 0 100px #6c2dff;
+}
+
+@keyframes animar {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
